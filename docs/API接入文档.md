@@ -233,6 +233,25 @@ sid=xxxxxxx //问诊服务号
 
 - 返回：数据结构同获取问题接口
 
+
+
+### 添加预设问题
+
+- 请求地址: http://mydoctor.valurise.com/apis/addCustomUserInput.json
+- 请求方式: POST
+- Content Type: application/json
+- URI入参:
+
+```
+sid=xxxxxxx //问诊服务号
+```
+
+- Body入参
+
+> 用户预设的问题答案集合，可添加多个，接口会自动去重。
+>
+> 具体参数格式与『获取问题/结论节点』接口相同，请参考上文。
+
 ---
 
 ### 错误码
