@@ -249,23 +249,20 @@ sid=xxxxxxx //问诊服务号
 
 - 请求地址：http://mydoctor.valurise.com/apis/conversation.json
 - 请求方式：POST
-- URI入参：
-
-```
-sid=xxxxxxx //问诊服务号
-```
 - Content Type: application/x-www-form-urlencoded
 
 - Body入参：
 ```
-content=xxxxxxx //用户输入的文字信息，注意需要做URLEncode
-answerId=
+uid=xxxxxxx     // 唯一用户识别号
+sid=xxxxxxx     // 问诊服务号
+content=xxxxxxx // 用户输入的文字信息，注意需要做URLEncode
 ```
 
 - 返回：
 ```
 {
-  "sid": "xxxxxx", // 服务号,对应一次问诊服务。如未设置，则说明当前未处于问诊流程中
+  "sid": "xxxxxx", // 服务号,对应一次问诊服务流程需要在下次请求是作为入参带入。
+                   // 如未设置，则说明当前未处于问诊流程中.
   "ts":xxxxx // 时间戳(毫秒), 服务器当前时间
   "content": "xxxxx", // 返回给用户看的文字提示信息。
   "speach": "xxxxx", // 返回给用户的口语化的文字信息。
@@ -275,9 +272,6 @@ answerId=
       "url": "xxxxxx" // 返回给用户可以进行展示交互的URL链接
     },
     ...
-  ],
-  "node": {  // 如未设置，则说明当前未处于问诊流程中
-    ... // 问题或结论节点，数据结构同获取问题接口
-  }
+  ]
 }
 ```
