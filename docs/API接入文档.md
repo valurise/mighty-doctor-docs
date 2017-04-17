@@ -269,12 +269,14 @@ sid=xxxxxxx //问诊服务号
 ```
 uid=xxxxxxx     // 唯一用户识别号
 sid=xxxxxxx     // 问诊服务号
+devId=xxxxxx    // 唯一设备识别号，可选
 content=xxxxxxx // 用户输入的文字信息，注意需要做URLEncode
 ```
 
 - 返回：
 ```
 {
+  "devId":"xxxxxx", // 设备识别号，如果入参有设置值则会原样回传。
   "sid": "xxxxxx", // 服务号,对应一次问诊服务流程需要在下次请求是作为入参带入。
                    // 如未设置，则说明当前未处于问诊流程中.
   "ts":xxxxx // 时间戳(毫秒), 服务器当前时间
